@@ -1,33 +1,33 @@
 ## With these functions we can wrap a matrix and store its inverse along side it.
 ## Usage is demonstrated below:
 ## > source('cachematrix.R')
-## > cacheTree <- makeCacheMatrix(tree)
-## > cacheTree$get()
+## > cacheM <- makeCacheMatrix(M)
+## > cacheM$get()
 ## [,1] [,2] [,3]
 ## [1,]    2    1    0
 ## [2,]    2    0    0
 ## [3,]    2    0    1
-## > cacheTree$getmean()
+## > cacheM$getmean()
 ## NULL
-## > cacheTree$getinverse()
+## > cacheM$getinverse()
 ## NULL
-## > cacheSolve(cacheTree)
+## > cacheSolve(cacheM)
 ## [,1] [,2] [,3]
 ## [1,]    0  0.5    0
 ## [2,]    1 -1.0    0
 ## [3,]    0 -1.0    1
-## > cacheTree$getmean()
+## > cacheM$getmean()
 ## NULL
-## > cacheTree$getinverse()
+## > cacheM$getinverse()
 ## [,1] [,2] [,3]
 ## [1,]    0  0.5    0
 ## [2,]    1 -1.0    0
 ## [3,]    0 -1.0    1
-## > cacheMean(cacheTree)
+## > cacheMean(cacheM)
 ## [1] 0.8888889
-## > cacheTree$getmean()
+## > cacheM$getmean()
 ## [1] 0.8888889
-## > cacheTree$getinverse()
+## > cacheM$getinverse()
 ## [,1] [,2] [,3]
 ## [1,]    0  0.5    0
 ## [2,]    1 -1.0    0
