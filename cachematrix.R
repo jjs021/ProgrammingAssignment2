@@ -1,7 +1,40 @@
-## Put comments here that give an overall description of what your
-## functions do
+## With these functions we can wrap a matrix and store its inverse along side it.
+## Usage is demonstrated below:
+## > source('cachematrix.R')
+## > cacheTree <- makeCacheMatrix(tree)
+## > cacheTree$get()
+## [,1] [,2] [,3]
+## [1,]    2    1    0
+## [2,]    2    0    0
+## [3,]    2    0    1
+## > cacheTree$getmean()
+## NULL
+## > cacheTree$getinverse()
+## NULL
+## > cacheSolve(cacheTree)
+## [,1] [,2] [,3]
+## [1,]    0  0.5    0
+## [2,]    1 -1.0    0
+## [3,]    0 -1.0    1
+## > cacheTree$getmean()
+## NULL
+## > cacheTree$getinverse()
+## [,1] [,2] [,3]
+## [1,]    0  0.5    0
+## [2,]    1 -1.0    0
+## [3,]    0 -1.0    1
+## > cacheMean(cacheTree)
+## [1] 0.8888889
+## > cacheTree$getmean()
+## [1] 0.8888889
+## > cacheTree$getinverse()
+## [,1] [,2] [,3]
+## [1,]    0  0.5    0
+## [2,]    1 -1.0    0
+## [3,]    0 -1.0    1
+## >
 
-## Write a short comment describing this function
+## Creates an object wrapping a matrix with cached mean and inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -54,5 +87,5 @@ cacheMean <- function(x, ...) {
     x$setmean(m)
     m
 }
-## Return a mean of the matrix 'x'
+## Return the mean of the matrix 'x'
 
